@@ -1,22 +1,51 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
-
 int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
 
+   //starting introducing the game to the user
+   printf("Hello there! Let's play a game called 'Top Trumps'!\n");
+
+   //registering the variables
+   char citycode[50];
+   char name[50];
+   float population;
+   float PIB;
+   int tourist_attractions;
+
+   //printing and registering the inputs to our variables with printf and scanf
+   printf("First of all, let's register your card:\n");
+   printf("What's your city code?\n");
+   printf("City code:");
+   scanf("%s", &citycode);
+
+   printf("What's the name of your city?\n");
+   printf("Name of the city:");
+   scanf("%s", &name);
+
+   printf("What's the current city population?\n");
+   printf("City population:");
+   scanf(" %d", &population);
+
+   printf("What's the current PIB of the city?\n");
+   printf("City's PIB:");
+   scanf("%d", PIB);
+
+   printf("How many turistic points this city has?\n");
+   printf("Quantity of turistic points:");
+   scanf("%i", &tourist_attractions);
+
+   //now let's print the statistics that we got with the user's responses, whos we got stored at our variables using scanf
+   printf("So the statistics of the cards are:\n");
+   printf("----------------------------------\n");
+
+   //printing the results
+   printf("City code:%s\n", citycode);
+   printf("Name:%s\n", name);
+   printf("Population:%d\n", population);
+   printf("PIB:%d\n", PIB);
+   printf("Tourist attractions:%i\n", tourist_attractions);
+
+   //ending the program, returning it to 0
     return 0;
+    
 }
