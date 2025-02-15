@@ -2,17 +2,17 @@
 
 int main() {
 
-   //starting introducing the game to the user
+   //starting introducing the game
    printf("Hello there! Let's play a game called 'Top Trumps'!\n");
 
    //registering the variables
    char citycode[50];
    char name[50];
-   float population;
-   float PIB;
+   double population;
+   double PIB;
    int tourist_attractions;
 
-   //printing and registering the inputs to our variables with printf and scanf
+   //printing and getting the inputs with printf and scanf
    printf("First of all, let's register your card:\n");
    printf("What's your city code?\n");
    printf("City code:");
@@ -24,11 +24,11 @@ int main() {
 
    printf("What's the current city population?\n");
    printf("City population:");
-   scanf(" %d", &population);
+   scanf("%d", &population);
 
    printf("What's the current PIB of the city?\n");
    printf("City's PIB:");
-   scanf("%d", PIB);
+   scanf("%d", &PIB);
 
    printf("How many turistic points this city has?\n");
    printf("Quantity of turistic points:");
@@ -46,6 +46,6 @@ int main() {
    printf("Tourist attractions:%i\n", tourist_attractions);
 
    //ending the program, returning it to 0
-    return 0;
-    
+   return 0;
+
 }
