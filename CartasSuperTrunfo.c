@@ -3,44 +3,48 @@
 int main() {
 
     //registering the variables
-    char citycode1[50]; 
     char state1[50];
     char name1[50];
-    double population1;
+    float population1;
     float area1;
-    double PIB1;
+    float PIB1;
     int tourist_attractions1;
 
-    char citycode2[50];
     char name2[50];
     char state2[50];
-    double population2;
+    float population2;
     float area2;
-    double PIB2;
+    float PIB2;
     int tourist_attractions2;
 
-    printf("What's the City's name of the first card?");
+    printf("What's the City's name of the first card?\n");
     scanf("%s", &name1);
-    printf("And the state?");
+    printf("And the state?\n");
     scanf("%s", &state1);
-    printf("What's the City's name of the second card?");
+    printf("What's the City's name of the second card?\n");
     scanf("%s", &name2);
-    printf("And the state of the second card?");
+    printf("And the state of the second card?\n");
     scanf("%s", &state2);
 
     //menu
     int option;
-    printf("Pick one to compare between the two cards:");
-    printf("1 - Population.\n 2 - Area.\n 3 - PIB.\n 4 - Quantity of tourist attractions.\n 5 - Demographic density.");
-    scanf("%d", &option);
+    printf("Pick one to compare between the two cards:\n");
+    printf("1 - Population.\n2 - Area.\n3 - PIB.\n4 - Quantity of tourist attractions.\n5 - Demographic density.\n");
+    scanf("%i", &option);
 
+    //creating the switch and using the logic
     switch (option)
     {
     case 1:
-        printf("What's the population of the first card?");
-        scanf("%d", &population1);
-        printf("And the population of the second card?");
-        scanf("%d", &population2);
+        printf("What's the population of the first card?\n");
+        scanf("%f", &population1);
+        printf("And the population of the second card?\n");
+        scanf("%f", &population2);
+
+        printf("------------------------\n");
+        printf("First card:%s - Second card:%s\n", name1, name2);
+        printf("Comparing: Population\n");
+        printf("First card population: %f - Second card population: %f\n", population1, population2);
 
         if (population1 > population2)
         {
@@ -53,10 +57,15 @@ int main() {
         break;
 
     case 2:
-        printf("What's the area of the first card?");
-        scanf("%d", &area1);
-        printf("And the area of the second card?");
-        scanf("%d", &area2);
+        printf("What's the area of the first card?\n");
+        scanf("%f", &area1);
+        printf("And the area of the second card?\n");
+        scanf("%f", &area2);
+
+        printf("------------------------\n");
+        printf("First card:%s - Second card:%s\n", name1, name2);
+        printf("Comparing: Area\n");
+        printf("First card area: %f - Second card area: %f\n", area1, area2);
 
         if (area1 > area2)
         {
@@ -67,84 +76,82 @@ int main() {
             printf("Empate!");
         }
         break;
+
+    case 3:
+        printf("What's the PIB of the first card?\n");
+        scanf("%f", &PIB1);
+        printf("And what's the PIB of the second card?\n");
+        scanf("%f", &PIB2);
+
+        printf("------------------------\n");
+        printf("First card:%s - Second card:%s\n", name1, name2);
+        printf("Comparing: PIB\n");
+        printf("First card PIB: %f - Second card PIB: %f\n", PIB1, PIB2);
+
+        if (PIB1 > PIB2)
+        {
+            printf("%s - %s Venceu!\n  ", name1, state1);
+        } else if (PIB2 > PIB1){
+            printf("%s - %s Venceu!\n  ", name2, state2);
+        } else {
+            printf("Empate!");
+        }
+        break;
+    
+    case 4:
+        printf("How many tourist attractions the first city has?\n");
+        scanf("%i", &tourist_attractions1);
+        printf("How many tourist attractions the second city has?\n");
+        scanf("%i", &tourist_attractions2);
+
+        printf("------------------------\n");
+        printf("First card:%s - Second card:%s\n", name1, name2);
+        printf("Comparing: Quantity of tourist attractions\n");
+        printf("First card quantity of tourist attractions: %i - Second card quantity of tourist attractions: %i\n", tourist_attractions1, tourist_attractions2);
+
+        if (tourist_attractions1 > tourist_attractions2) 
+        {
+            printf("%s - %s Venceu!\n  ", name1, state1);
+        } else if (tourist_attractions2 > tourist_attractions1) {
+            printf("%s - %s Venceu!\n  ", name2, state2);
+        } else {
+            printf("Empate!");
+        }
+        break;
+    
+    case 5:
+        printf("What's the area of the first city?\n");
+        scanf("%f", &area1);
+        printf("And the population of the first city?\n");
+        scanf("%f", &population1);
+
+        float pop_density1 = population1 / area1;
+
+        printf("What's the area of the second city?\n");
+        scanf("%f", &area2);
+        printf("And what's the population of the second city?\n");
+        scanf("%f", &population2);
+
+        float pop_density2 = population2 / area2;
+
+        printf("------------------------\n");
+        printf("First card:%s - Second card:%s\n", name1, name2);
+        printf("Comparing: Demographic Density\n");
+        printf("First card Demographic Density: %f - Second card Demographic Density: %f\n", pop_density1, pop_density2);
+
+        if (pop_density1 < pop_density2) {
+            printf("%s - %s Venceu!\n  ", name1, state1);
+        } else if (pop_density2 < pop_density1) {
+            printf("%s - %s Venceu!\n  ", name2, state2);
+        } else {
+            printf("Empate!");
+        }
+        break;
     
     default:
         printf("Opção inválida.");
         break;
     }
-
-
-    //printing and getting the inputs with printf and scanf
-    printf("Let's register the first card!\n");
-    printf("City's state: ");
-    scanf(" %s", &state1);
-
-    printf("City's code: ");
-    scanf("%s", &citycode1);
-
-    printf("Name of the city: ");
-    scanf("%s", &name1);
-
-    printf("City's population: ");
-    scanf("%d", &population1);
-
-    printf("City's area: ");
-    scanf("%f", &area1);
-
-    printf("City's PIB: ");
-    scanf("%d", &PIB1);
-
-    printf("Quantity of turistic points: ");
-    scanf("%i", &tourist_attractions1);
-
-    float pop_density1 = population1 / area1;
-    float pibpercapita1 = PIB1 / population1;
-
-    printf("Population Density: %f\n", pop_density1);
-    printf("PIB per capita: %f\n", pibpercapita1);
-
-    //now let's register the second card
-
-    printf("Let's register the second card!\n");
-    printf("City's state: ");
-    scanf("%s", &state2);
-
-    printf("City's code: ");
-    scanf("%s", &citycode2);
-
-    printf("Name of the city: ");
-    scanf("%s", &name2);
-
-    printf("City's population: ");
-    scanf("%d", &population2);
-
-    printf("City's area: ");
-    scanf("%f", &area2);
-
-    printf("City's PIB: ");
-    scanf("%d", &PIB2);
-
-    printf("Quantity of turistic points: ");
-    scanf("%i", &tourist_attractions2);
-
-    float pop_density2 = population2 / area2;
-    float pibpercapita2 = PIB2 / population2;
-
-    printf("Population Density: %f\n", pop_density2);
-    printf("PIB per Capita: %f\n", pibpercapita2);
-
-    // now let's compare the cards
-
-    printf("");
-    printf("CARD 1 - %s: %f\n", state1, area1);
-    printf("CARD 2 - %s: %f\n", state2, area2);
-
-    // if statement to find the card with the larger area
-    if (area1 > area2) {
-        printf("RESULT: CARD 1 (%S) WON!", state1);
-    } else {
-        printf("RESULT: CARD 2 (%s) WON!", state2);
-    };
 
     //ending the program, returning it to 0
     return 0;
